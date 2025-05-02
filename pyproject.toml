@@ -1,0 +1,51 @@
+[build-system]
+requires = ['setuptools']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = "debounce"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.7"
+dependencies = []
+
+
+[dependency-groups]
+dev = [
+    "pytest-asyncio>=0.21.2",
+    "pytest>=7.4.4",
+    "ruff>=0.11.8",
+    "setuptools>=68.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+
+[tool.ruff]
+src = ["src"]
+ignore = ["tests"]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    # ANN101: Missing type annotation for `self` in method
+    "ANN101",
+    # ANN102: Missing type annotation for `cls` in classmethod
+    "ANN102",
+    # D100: Missing docstring in public modul
+    "D100",
+    # D107: Missing docstring in `__init__`
+    "D107",
+    # D104: Missing docstring in public package
+    "D104",
+    # D105: Missing docstring in magic method
+    "D105",
+    # N802: Function name should be lowercase
+    "N802",
+    # N815: Variable in class scope should not be mixedCase
+    "N815",
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
