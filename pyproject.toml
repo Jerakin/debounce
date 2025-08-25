@@ -1,14 +1,14 @@
 [build-system]
-requires = ['setuptools']
-build-backend = 'setuptools.build_meta'
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
 
 [project]
 name = "debounce"
-version = "0.1.0"
-description = "Add your description here"
+description = "Python implementation of debounce functionality."
 requires-python = ">=3.7"
 dependencies = []
-
+readme = "README.md"
+dynamic = ["version"]
 
 [dependency-groups]
 dev = [
@@ -21,6 +21,9 @@ dev = [
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 
+[tool.hatch.version]
+source = "vcs"
+fallback-version = "0.1.0"
 
 [tool.ruff]
 src = ["src"]
