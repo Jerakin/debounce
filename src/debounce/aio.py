@@ -80,10 +80,10 @@ def _debounce_wrapper_async(  # noqa: C901
 
         # max wait timer start
         if max_wait and max_wait_timer is None:
-            max_wait_timer = time.time()
+            max_wait_timer = time.monotonic()
 
         # If we have a max wait, and we have reached it call the users function.
-        if max_wait and (time.time() - max_wait_timer) > max_wait:
+        if max_wait and (time.monotonic() - max_wait_timer) > max_wait:
             await call_function(*args, **kwargs)
             return
 
