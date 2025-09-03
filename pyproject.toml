@@ -3,7 +3,7 @@ requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 [project]
-name = "debounce"
+name = "py-debounce"
 description = "Python implementation of debounce functionality."
 requires-python = ">=3.7"
 dependencies = []
@@ -11,11 +11,15 @@ readme = "README.md"
 dynamic = ["version"]
 
 [dependency-groups]
-dev = [
+test = [
     "pytest-asyncio>=0.21.2",
     "pytest>=7.4.4",
-    "ruff>=0.11.8",
-    "setuptools>=68.0.0",
+]
+dev = [
+     { include-group = "test" },
+    "ruff",
+    "hatchling",
+    "setuptools",   
 ]
 
 [tool.pytest.ini_options]
