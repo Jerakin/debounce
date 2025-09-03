@@ -10,6 +10,10 @@ Debounced function delays invoking the function until after `wait` seconds have
 * `leading=True` - If you want it to call your function immediately on invocation.
 * `max_wait=x` - The maximum time the decorated function is allowed to be delayed before it's invoked.
 
+## Installation
+```shell
+pip install py-debounce
+```
 
 ## Usage
 
